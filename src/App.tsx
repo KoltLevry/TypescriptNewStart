@@ -11,6 +11,7 @@ function App() {
       <hr />
       <Student studentName="John" studentAge={25}/>
       <Student studentName="Emmy" studentAge={22}/>
+      <Student studentName="Georg" studentAge={22-10}/>
     </>
   )
 }
