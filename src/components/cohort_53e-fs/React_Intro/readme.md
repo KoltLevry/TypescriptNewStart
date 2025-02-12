@@ -7,3 +7,8 @@
 * Чтобы создать простой компонент React, вы определяете функцию JavaScript или класс, который возвращает синтаксис JSX. JSX — это расширение синтаксиса для JavaScript, которое позволяет вам писать HTML-подобный код внутри ваших функций JavaScript.
 
 ## intro - introduction - ввід
+
+# extention
+
+- Video Speed Pro
+- Volume Master - Lautstärkeregler
