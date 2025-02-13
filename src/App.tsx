@@ -20,7 +20,7 @@ function App() {
       <hr />
       {/* DRY - don`t repeat yourself */}
       {/* {} фігурні скобки вибивають нас в js з jsx*/}
-      {/* {students.map( student => <Student key={Math.random()} studentName={student.name} studentAge={student.age}/>)} */}
+      {students.map( student => <Student key={Math.random()} studentName={student.name} studentAge={student.age}/>)}
       {/* {students.map( student => <Student key={Math.random() + new Date()} studentName={student.name} studentAge={student.age}/>)} */}
       {/* <Student studentName="John" studentAge={25}/>
       <Student studentName="Emmy" studentAge={22}/>
@@ -28,7 +28,7 @@ function App() {
       {/* звертаємося до масиву, викликаємо метод map, де при кожній ітерації,(отр ітерований елемнт
       ми кожен раз звертаємося до елементу який виводить/повертає(=>) екземпляр Студент з унікальним ключом*/}
       <hr />
-      <Task />
+      {/* <Task /> */}
     </>
   )
 }
