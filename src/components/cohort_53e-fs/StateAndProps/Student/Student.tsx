@@ -3,19 +3,24 @@ import { StudentAge, StudentCardBox, StudentName } from "./styles";
 
 interface StudentProps {
   studentName: string;
-  studentAge: number;
+  studentAge: number | string;
+  index?: number;
+  isActive?: boolean;
+  onDelete?: () => void;
 }
 // {studentName, studentAge} = означають ці скобки {} те що, 1й параметр не називається а деструктуризужться = обєкт з якого ми хочемо дістати якість значення
 //  => 1) ми хочемо дістати значення по ключу - studentName і 2) по ключу - studentAge
 // Жеструктуризація - є СТРУКТУРА в обєкту, а нам від неї треба позбутися
 
-const Student = ({ studentName, studentAge }: StudentProps) => {
+const Student = ({ studentName, studentAge, onDelete }: StudentProps) => {
+
   const [isEdit, setIsEdit] = useState(false);
   const [updatedName, setUpdatedName] = useState<string>(studentName);
-  const [updatedAge, setUpdatedAge] = useState<number>(studentAge);
+  const [updatedAge, setUpdatedAge] = useState<number | string>(studentAge);
+  const [isActive, setIsActive] = useState(true);
 
   const inputNameRef = useRef<HTMLInputElement | null>(null);
-  const inputAgeRef = useRef<HTMLInputElement | undefined | number>(18);
+  const inputAgeRef = useRef<HTMLInputElement | number | string>(18);
 
   const handleClickSave = () => {
     if (inputNameRef.current) {
@@ -25,7 +30,11 @@ const Student = ({ studentName, studentAge }: StudentProps) => {
     }
   };
 
-  return isEdit ? (
+  const handleClickDelete = () => {
+    // setIsActive(false);
+  }
+
+  return isActive ? (isEdit ? (
     <>
       <StudentCardBox>
         <input ref={inputNameRef} type="text" placeholder="Write new name: " defaultValue={updatedName} />
@@ -46,9 +55,12 @@ const Student = ({ studentName, studentAge }: StudentProps) => {
         <StudentName>Name: {updatedName}</StudentName>
         <StudentAge>Age: {updatedAge}</StudentAge>
         <button onClick={() => setIsEdit(true)}>Edit</button>
+        {/* <button onClick={handleClickDelete}>Delete</button> */}
+        <button onClick={onDelete}>Delete</button>
       </StudentCardBox>
     </>
-  );
+  )
+) : (<></>)
   // return (
   //     <>
   //     <StudentCardBox>
