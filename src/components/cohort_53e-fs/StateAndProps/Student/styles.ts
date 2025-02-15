@@ -5,6 +5,7 @@ border: 2px solid blue;
 border-radius: 12px;
 text-align: center;
 width: 200px;
+max-height: 180px;
 margin: 12px;
 padding: 12px;
 box-shadow: 0 4px 8px rgba(0,0,0, .3);
