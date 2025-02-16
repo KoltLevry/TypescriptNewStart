@@ -65,3 +65,19 @@ const fruits = ['apple', 'banana', 'orange'];
     ))
 }
 ```
+
+```
+const handleClickAddTask = () => {
+    <!-- зберігаємо значення в нову зміну і оновляємо стан = очищаємо ввід -->
+        if(inputRef.current && inputRef.current.value.trim()) {
+            const task = inputRef.current!.value.trim();
+            setListItems((prev) => [...prev, task]);
+
+            <!-- ми оновлюємо значення яке ще не оновило стан -->
+            // setListItems((prev) => [...prev, inputRef.current!.value.trim()]);
+            
+            console.log(listItems);
+            inputRef.current!.value = "";
+        }
+    };
+```
